@@ -144,11 +144,23 @@
 {{- if eq .Site.Params.diagram.handler "mermaid" }}
 <script defer src="{{ printf $assets.mermaid.js.url $assets.mermaid.version }}" {{ with $assets.mermaid.js.sri }}
   integrity="{{ . }}" {{ end }} crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.language-mermaid').forEach((node) => {
+      const newElement = document.createElement('div');
+      newElement.innerHTML = node.innerHTML;
+      newElement.classList.add('mermaid');
+
+      node.parentElement.replaceWith(newElement);
+    });
+  });
+</script>
 {{- with .Site.Params.diagram.mermaid }}
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     mermaid.initialize({
-      {{- partial "utils/get-js-configs" . | safeJS }}
+      ...{ {{- partial "utils/get-js-configs" . | safeJS }} },
+      theme: document.querySelector('.dark') ? 'dark' : 'light',
     });
   });
 </script>

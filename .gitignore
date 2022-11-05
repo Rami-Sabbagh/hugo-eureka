@@ -2,6 +2,8 @@
 
 # Generated files by hugo
 /public/
+/resources/_gen/*
+!/resources/_gen/assets
 /assets/jsconfig.json
 hugo_stats.json
 
@@ -12,6 +14,10 @@ hugo.linux
 
 # Temporary lock file while building
 /.hugo_build.lock
+
+# Development site content
+/config
+/content
 
 # ----------------------------------- Node ----------------------------------- #
 

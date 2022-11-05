@@ -54,7 +54,7 @@
 
 <meta name="generator" content="Hugo Eureka {{ .Site.Data.eureka.version }}" />
 
-{{- $eurekaCSS := resources.Get "css/eureka.css" | postCSS (dict "config" "./assets/css/postcss.config.js" "inlineImports" true) | resources.ExecuteAsTemplate "css/eureka.css" . | minify | fingerprint "sha384" }}
+{{- $eurekaCSS := resources.Get "css/eureka.css" | resources.PostCSS (dict "Config" "./assets/css/postcss.config.js" "inlineImports" true) | resources.ExecuteAsTemplate "css/eureka.css" . | minify | fingerprint "sha384" }}
 <link rel="stylesheet" href="{{ $eurekaCSS.Permalink }}">
 
 {{- $eurekaJS := resources.Get "js/eureka.js" | resources.ExecuteAsTemplate "js/eureka.js" . | minify | fingerprint "sha384" }}

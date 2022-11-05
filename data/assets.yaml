@@ -2,7 +2,7 @@
 
 # highlight.js
 highlightjs:
-  version: 11.4.0
+  version: 11.6.0
   css:
     url: https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@%s/build/styles/%s.min.css
   js:
@@ -12,23 +12,23 @@ highlightjs:
 
 # KaTeX
 katex:
-  version: 0.15.2
+  version: 0.16.3
   css:
     url: https://cdn.jsdelivr.net/npm/katex@%s/dist/katex.min.css
-    sri: sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ
+    sri: sha384-Juol1FqnotbkyZUT5Z7gUPjQ9gzlwCENvUZTpQBAPxtusdwFLRy382PSDx5UUJ4/
   js:
     url: https://cdn.jsdelivr.net/npm/katex@%s/dist/katex.min.js
-    sri: sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY
+    sri: sha384-97gW6UIJxnlKemYavrqDHSX3SiygeOwIZhwyOKRfSaf0JWKRVj9hLASHgFTzT+0O
   autoRender:
     url: https://cdn.jsdelivr.net/npm/katex@%s/dist/contrib/auto-render.min.js
-    sri: sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR
+    sri: sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05
 
 # Mermaid
 mermaid:
-  version: 8.14.0
+  version: 9.2.0
   js:
     url: https://cdn.jsdelivr.net/npm/mermaid@%s/dist/mermaid.min.js
-    sri: sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0
+    sri: sha384-UoanRQ1Uz4+X6v/deML4FlMb5A9x1Xxmi8P4RLJZl2KJ6vXAodAsBgHvh6hFuj6U
 
 # Valine
 valine:

@@ -1,8 +1,18 @@
 Thank you for investing your time in contributing to Eureka! This is a document that is still under construction and therefore does not cover all considerations during development.
 
+## Setup development environment
+
+- Install node.js dependencies by executing `npm i`.
+
 ## CSS Resources
 
 Always remember to update the cached resources in `resources/_gen/` when you make changes to CSS.
+
+When doing so make sure to use production mode.
+
+```
+HUGO_ENVIRONMENT === 'production'
+```
 
 ## Font Awesome
 

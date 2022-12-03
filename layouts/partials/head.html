@@ -145,6 +145,7 @@
 <script defer src="{{ printf $assets.mermaid.js.url $assets.mermaid.version }}" {{ with $assets.mermaid.js.sri }}
   integrity="{{ . }}" {{ end }} crossorigin></script>
 <script>
+  /*  Convert code blacks with the mermaid language to div blocks.  */
   document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.language-mermaid').forEach((node) => {
       const newElement = document.createElement('div');
@@ -160,7 +161,7 @@
   document.addEventListener("DOMContentLoaded", function () {
     mermaid.initialize({
       ...{ {{- partial "utils/get-js-configs" . | safeJS }} },
-      theme: document.querySelector('.dark') ? 'dark' : 'light',
+      //theme: 'dark',
     });
   });
 </script>

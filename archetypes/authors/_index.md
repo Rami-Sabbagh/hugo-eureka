@@ -5,6 +5,13 @@ role:
 bio:
 avatar:
 
+# Open Graph (Media Presence)
+firstName:
+lastName:
+username:
+gender: #male, female
+#twitterUsername: #optional, without the @
+
 organization:
   name:
   url:

@@ -1,8 +1,34 @@
+{{ if .IsPage }}
+<meta name="twitter:card" content="summary_large_image">
+{{ else }}
+<meta name="twitter:card" content="summary">
+{{ end }}
+
+{{ if .Site.Params.TwitterUsername }}
+<meta name="twitter:site" content="@{{ .Site.Params.TwitterUsername  }}" >
+{{ end }}
+
 <meta property="og:title" content="{{ partial "get-title" . }}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+{{ if .Params.FeaturedImage }}
+{{ $icon := partial "utils/get-image" (dict "context" . "url" .Params.FeaturedImage) }}
+<meta property="og:image" content="{{ $icon }}">
+{{ else }}
 {{ $icon := partial "utils/get-image" (dict "context" . "url" .Site.Params.icon) }}
-{{ with $icon }}
-<meta property="og:image" content="{{ . }}">
+<meta property="og:image" content="{{ $icon }}">
+{{ end }}
+
+{{ with .GetTerms "authors" }}
+{{ range . }}
+<meta property="og:author" content="{{ .Params.title }}" >
+<meta property="og:author:first_name" content="{{ .Params.firstName }}" >
+<meta property="og:author:last_name" content="{{ .Params.lastName }}" >
+<meta property="og:author:username" content="{{ .Params.username }}" >
+<meta property="og:author:gender" content="{{ .Params.gender }}" >
+{{ if .Params.twitterUsername }}
+<meta property="twitter:creator" content="@{{ .Params.twitterUsername }}">
+{{ end }}
+{{ end }}
 {{ end }}
 
 <meta property="og:url" content="{{ .Permalink }}" />
@@ -35,7 +61,7 @@
 <meta property="og:site_name" content="{{ . }}" />
 {{ end }}
 
-{{ with .Params.videos }}
+{{ with .Params.Videos }}
 {{ range . }}
 <meta property="og:video" content="{{ . | absURL }}" />
 {{ end }}
